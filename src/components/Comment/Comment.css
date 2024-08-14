@@ -92,22 +92,24 @@ button:focus {
 }
 
 .edit-button {
-  background-color: #3498db;
-  color: white;
+  background-color: #F9F9F9;
+  color: #3498db;
+  font-weight: 700;
   border: none;
   border-radius: 3px;
 }
 
 .reply-button {
-  background-color: #2ecc71;
-  color: white;
+  background-color: #F9F9F9;
+  color: #3498db;
+  font-weight: 700;
   border: none;
   border-radius: 3px;
 }
 
 .comment-editing button {
-  background-color: #3498db;
-  color: white;
+  color: #3498db;
+  font-weight: 700;
   border: none;
   border-radius: 3px;
   margin-right: 5px;
