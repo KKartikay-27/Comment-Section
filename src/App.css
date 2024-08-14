@@ -10,3 +10,22 @@ h1 {
   text-align: center;
   color: #333;
 }
+
+.sort-by {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.sort-by:hover{
+  cursor: pointer;
+}
+
+.sort-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 10px;
+}

@@ -4,6 +4,7 @@
   margin-bottom: 10px;
   background-color: #f9f9f9;
   border-radius: 5px;
+  border: 1px solid #ccc; /* Single border for the comment */
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -27,7 +28,7 @@
 .comment-date {
   font-size: 0.8em;
   color: #777;
-  margin-right: 0; /* Removed margin to align with delete button */
+  margin-right: 0; /* Remove margin to align with delete button */
 }
 
 .comment-text-container {
@@ -67,9 +68,9 @@ button:focus {
 }
 
 .delete-button {
-  position: absolute; /* Absolute positioning relative to the .comment */
+  position: absolute; /* Position relative to .comment */
   top: 50%; /* Center vertically */
-  right: 10px; /* Align with the right border of the comment */
+  right: -20px; /* Move slightly outside the right edge of the comment */
   transform: translateY(-50%); /* Center vertically */
   background-color: #000000;
   color: white;

@@ -5,6 +5,7 @@ import CommentList from './components/CommentList/CommentList';
 
 const App = () => {
   const [comments, setComments] = useState([]);
+  const [isDescending, setIsDescending] = useState(true);
 
   useEffect(() => {
     const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
@@ -50,11 +51,32 @@ const App = () => {
     );
   };
 
+  const handleSortToggle = () => {
+    setIsDescending(!isDescending);
+  };
+
+  // Function to sort comments based on date
+  const sortedComments = [...comments].sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return isDescending ? dateB - dateA : dateA - dateB;
+  });
+
   return (
     <div className="App">
       <CommentForm onSubmit={addComment} />
+      <div className="sort-by">
+        <span onClick={handleSortToggle}>Sort By: Date and Time</span>
+        <button onClick={handleSortToggle} className="sort-button">
+          {isDescending ? (
+            <i className="fa-solid fa-arrow-down" aria-hidden="true"></i>
+          ) : (
+            <i className="fa-solid fa-arrow-up" aria-hidden="true"></i>
+          )}
+        </button>
+      </div>
       <CommentList
-        comments={comments}
+        comments={sortedComments}
         onDelete={deleteItem}
         onEdit={editItem}
         onReply={addReply}
