@@ -23,7 +23,9 @@ const Comment = ({ comment, onDelete, onEdit, onReply, isReply }) => {
       <div className="comment-header">
         <span className="comment-name">{comment.name}</span>
         <span className="comment-date">{new Date(comment.date).toLocaleDateString('en-GB')}</span>
-        <button className="delete-button" onClick={() => onDelete(comment.id)}>Delete</button>
+        <button className="delete-button" onClick={() => onDelete(comment.id)}>
+          <i className="fas fa-trash-alt"></i>
+        </button>
       </div>
       <div className="comment-text-container">
         {isEditing ? (

@@ -1,12 +1,12 @@
 .comment {
-  padding: 10px;
+  position: relative; /* Required for positioning child elements absolutely */
+  padding: 10px 40px 10px 10px; /* Adjusted padding to make room for the delete button */
   margin-bottom: 10px;
   background-color: #f9f9f9;
   border-radius: 5px;
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  position: relative; /* For better alignment of actions */
 }
 
 .comment.reply {
@@ -27,7 +27,7 @@
 .comment-date {
   font-size: 0.8em;
   color: #777;
-  margin-left: 10px; /* Add margin to avoid overlap with delete button */
+  margin-right: 0; /* Removed margin to align with delete button */
 }
 
 .comment-text-container {
@@ -67,10 +67,27 @@ button:focus {
 }
 
 .delete-button {
-  background-color: #e74c3c;
+  position: absolute; /* Absolute positioning relative to the .comment */
+  top: 50%; /* Center vertically */
+  right: 10px; /* Align with the right border of the comment */
+  transform: translateY(-50%); /* Center vertically */
+  background-color: #000000;
   color: white;
   border: none;
-  border-radius: 3px;
+  border-radius: 50%; /* Circular button */
+  width: 30px; /* Width of the button */
+  height: 30px; /* Height of the button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em; /* Font size for the icon */
+  cursor: pointer;
+  padding: 0; /* Remove default padding */
+  box-shadow: none; /* Remove box shadow */
+}
+
+.delete-button i {
+  margin: 0;
 }
 
 .edit-button {
